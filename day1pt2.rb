@@ -1,4 +1,4 @@
-lines = File.readlines("day1pt2input.txt")
+lines = File.readlines("day1input.txt")
 
 dial = 50
 password = 0
