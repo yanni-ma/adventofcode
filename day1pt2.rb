@@ -15,17 +15,18 @@ lines.each do |line|
 
   times = dial.abs / 100
 
-  if dial.negative?
+  if dial.negative? && (dial + amount.abs != 0)
     times += 1
   end
 
   password += times
 
+  if dial.zero?
+    password += 1
+  end
+
   dial %= 100
 
-  # if dial.zero?
-  #   password += 1
-  # end
   puts ("current password: " + password.to_s)
 end
 
