@@ -12,17 +12,17 @@ lines.each do |line|
   end
   times = dial / 100
   if times.negative?
-    times.abs
+    times = times.abs
     times += 1
   end
 
-  password += times.abs
+  password += times
 
   dial %= 100
 
-  if dial.zero?
-    password += 1
-  end
+  # if dial.zero?
+  #   password += 1
+  # end
 end
 
 puts password
