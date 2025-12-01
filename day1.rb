@@ -1,0 +1,21 @@
+lines = File.readlines("day1input.txt")
+
+dial = 50
+password = 0
+
+lines.each do |line|
+  amount = line[1..-1].to_i
+  if line.match(/R/)
+    dial += amount
+  else
+    dial -= amount
+  end
+  dial %= 100
+
+  if dial == 0
+    password += 1
+  end
+end
+
+puts password
+
